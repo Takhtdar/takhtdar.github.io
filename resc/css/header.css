@@ -1,0 +1,359 @@
+#Header h1,
+#Header h2,
+#Header h3 {
+    margin: 0;
+}
+
+
+#Header nav ul li h1 a {
+    color: white;
+    display: inline-block;
+    border-radius: 0 0 100px 0;
+    padding: 5px 100px 5px 10px;
+    font-style: italic;
+}
+
+#Header nav.fullScreen ul li:first-child {
+    color: white;
+    background-color: black;
+    border-radius: 0 0 100px 0;
+    padding: 5px 20px;
+    font-style: italic;
+
+}
+
+nav.fullScreen ul li img {
+    width: 26px;
+    height: 26px;
+    margin-top: 12px;
+}
+
+
+#Header nav.fullScreen ul {
+    margin: 0 0 0 0;
+}
+
+
+
+@media screen and (width >=800px) and (width < 1350px) {
+
+    #Header nav ul {
+        margin: -2px 0 0 0;
+    }
+
+}
+
+#Header nav ul .Header-Nav-Item a {
+    padding-right: 25px;
+    padding-left: 25px;
+    font-size: 1.5rem;
+}
+
+#Header nav ul #HeaderBurgur {
+    display: none;
+}
+
+
+#Header nav.sidebar {
+    display: none;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 400px;
+    background-color: white;
+    z-index: 3;
+}
+
+#Header nav.sidebar ul {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 400px;
+    padding: 50px 40px 0 40px;
+}
+
+#Header nav.sidebar ul li {
+    display: flex;
+    list-style-type: none;
+    height: 100px;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 10px;
+    margin: 20px 0;
+}
+
+
+#Header nav.sidebar ul li a {
+    width: 100%;
+    height: 100%;
+    font-size: 1.5rem;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    color: black;
+    text-decoration: none;
+}
+
+
+
+
+#Header #introduction {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: auto 0;
+}
+
+#Header #introduction div {
+    display: flex;
+    flex-direction: column;
+    width: 720px;
+}
+
+#Header #introduction p span #welcomeMessage {
+    text-align: justify;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+#Header #introduction p span#name {
+    font-size: 4rem;
+    display: block;
+    font-family: "Lobster";
+    font-style: italic;
+
+}
+
+#Header #introduction #title {
+    font-family: "RalewaySemiBoldItalic";
+    font-size: 2.5rem;
+}
+
+#Header #introduction #Icons {
+    border-bottom: 1px solid rgb(165, 164, 164);
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+    flex-direction: row;
+}
+
+#Header #introduction #tooltip {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    position: absolute;
+    left: inherit;
+    z-index: -10;
+    height: 65px;
+    top: inherit;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 8px;
+    opacity: 0;
+    transform: scale(0.9);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+
+#Header #introduction div .icon-wrapper {
+    display: flex;
+    flex-direction: row;
+}
+
+
+#Header #introduction #Icons img {
+    width: 64px;
+    height: 64px;
+    transition: .3s ease-in;
+}
+
+
+#Header #introduction button {
+    transform: rotate(3deg);
+    transition: transform .3s ease;
+    margin-top: 50px;
+    width: 70%;
+    font-size: 1.5rem;
+    background-color: white;
+    border-radius: 10px;
+    padding: 1rem;
+    cursor: pointer;
+    align-self: center;
+    display: block;
+    font-family: Liter-Regular;
+}
+
+#Header #introduction button:hover {
+    transform: rotate(0deg);
+    transition: transform .7s ease;
+}
+
+#Header #introduction #HIcon {
+    max-width: 400px;
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    /* border: 1px solid #ddd; */
+    padding: 5px;
+    max-height: 700px;
+      fill: url(#gradient); /* Applies the gradient */
+  filter: drop-shadow(0 0 10px #1e90ff) drop-shadow(0 0 20px #00bfff);
+  transition: all .4s ease-in-out;
+
+}
+
+
+#Header #HIcon:hover { 
+    scale: 1.2;
+}
+
+
+
+
+@media (width < 1350px){
+
+    #Header nav {
+        padding: 0px;
+    }
+
+    nav.fullScreen ul li a {
+        padding-top: 0 !important;
+    }
+
+    #Header #introduction {
+        display: flex;
+        flex-direction: column;
+        align-self: center;
+    }
+
+    #Header #introduction #HIcon {
+        order: -1;
+        max-width: 180px;
+        min-width: 180px;
+        height: auto;
+        max-width: 160px;
+
+        /* border-radius: 100%; */
+        /* border: 1px solid #ddd; */
+        padding: 5px;
+        margin: 20px 0;
+    }
+
+    #Header #introduction button {
+        margin-top: 25px;
+    }
+
+    #Header #introduction #Icons img {
+        width: 60px;
+        height: 60px;
+    }
+
+}
+
+
+@media (width < 800px) {
+
+    #Header nav.fullScreen {
+        margin: 0px;
+    }
+
+
+    #Header nav.sidebar {
+        width: 100%;
+    }
+
+    #Header nav.sidebar ul{
+        width: 100%;
+    }
+
+
+    #Header #introduction p span#name{
+        font-size: 2.5rem;
+    }
+
+    #Header #introduction #title{
+        font-size: 1.5rem;
+    }
+
+    #Header {
+        margin: 0px 0px 0 0;
+    }
+
+    #Header nav .sm-hide {
+        display: none;
+    }
+
+    #Header nav ul #HeaderBurgur {
+        display: block;
+        z-index: 5;
+    }
+
+    nav.fullScreen ul li img {
+        width: 26px;
+        height: 26px;
+        margin-top: 0px;
+        margin-right: 10px;
+    }
+
+    #Header nav ul li h1 a {
+        padding: 10px 70px 10px 10px !important;
+    }
+
+    #Header #introduction div {
+        width: 100%;
+        text-align: center;
+        padding: 30px 0;
+    }
+
+
+    /* Limit Icons to only three in small screen */
+
+    #Header #introduction #Icons {
+        margin: 10px auto;
+    }
+
+    #Header #introduction #Icons img:nth-child(1),
+    #Icons img:nth-child(2) {
+        display: none;
+    }
+
+    #Header #introduction #Icons img:nth-child(4) {
+        width: 46px;
+        height: 46px;
+    }
+
+    #Header #introduction #Icons img {
+        width: 32px;
+        height: 32px;
+    }
+
+}
+
+
+@media (height < 750px) {
+    #Icons {
+        display: none !important;
+    }
+
+    #Header #introduction #HIcon {
+        width: 120px;
+        min-width: 90px;
+        height: 120px;
+    }
+
+    #Header #introduction button {
+        margin-top: 5px;
+    }
+
+    #Header #introduction div {
+        padding: 15px 0;
+    }
+
+}

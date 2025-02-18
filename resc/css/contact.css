@@ -1,0 +1,319 @@
+
+
+/* Start of Contact Section */
+
+#Contact {
+    max-height: 0;
+}
+#Contact .container{
+    display: flex;
+    flex-direction: row;
+    margin: 15px 0;
+    border-radius: 10px;
+    padding: 15px;
+    justify-content: flex-start;
+    display: flex;
+    margin: 15px 0;
+    border-radius: 10px;
+    margin-top: auto;
+}
+
+#Contact .container #ContactDescription{
+    border-color: silver;
+    box-shadow: inset 0px 0px 3px 3px silver;
+    font-size: 1.2rem;
+    text-align: justify;
+}
+
+#Contact .container #ContactDescription p{
+    margin: 0 25px;
+}
+
+
+
+#Contact #ContactDescription h3{
+    font-style: italic;
+    font-size: 1.3rem;
+    margin-bottom: 0;
+}
+
+
+
+#Contact #socialMedias{
+    border-left: 1px solid black;
+    border-radius: 0px;
+} 
+
+#Contact #socialMedias img {
+    margin-right: 10px;
+    width: 24px; 
+    height: 24px;
+}
+
+#Contact #socialMedias li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+
+#Contact #complementeryNotes {
+    display: flex;
+    width: 100%;
+    margin: 15px 0;
+    border-radius: 10px;
+    padding: 15px;
+    justify-content: space-between;
+    margin-top: auto;
+
+}
+
+
+
+
+#Contact   ul {
+    margin: 0px;
+    padding: 10px;
+}
+
+#Contact li {
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+}
+
+
+
+
+#Contact .container #credits img{
+    margin-right: 10px;
+    width: 16px;
+}
+
+
+
+
+#Contact .container #credits #creditsULWrapper{
+    display: flex;
+    flex-direction: row; /* Places ul elements side-by-side */
+    gap: 1rem;           /* Adds space between the ul elements */
+    justify-content: space-between;
+}
+
+#Contact .container #credits li{
+    display: block;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+
+#Contact .container #credits li a { margin-left: 4px;}
+
+
+#Contact .container .card button{
+    width: 250px;
+    font-size: 1rem;
+}
+
+
+#Contact .container .card #email {
+    word-wrap: break-word; 
+}
+
+#Contact .container #contactInformation {
+    flex-direction: row;
+  display: flex;
+}
+
+@media screen and (width < 1200px) {
+
+    #Contact .container:first-child {
+        flex-direction: column;
+    }
+    
+    #Contact .container #ContactDescription{
+        width: 100%;
+    }
+
+    #Contact .container #contactInformation{
+        margin-top: 25px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+
+    }
+
+    #Contact .container:nth-of-type(2){
+        display: none;
+    }
+
+    #Contact .container div.sm-hide{
+        display: none;
+    }
+
+    #credits {
+        margin-right: 0px;
+    }
+
+    #Contact .container .card button{
+        width: 100%;
+    }
+    
+}
+
+@media screen and (width < 500px ) {
+    #Contact .container #contactInformation{
+        margin-top: 25px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    #Contact .container #contactInformation .card:first-child {
+        margin-right: 0px;
+        width: 100%;
+    }
+
+    #Contact .container #socialMedias {
+        margin-top: 50px;
+    }
+
+    Contact #emailBox {
+        max-width: 300px;
+        min-width: 300px;
+      }
+
+}
+
+#Contact .card {
+    display: flex;
+    flex-direction: column;
+    margin-right: 30px;
+    padding: 15px;
+    border-radius: 10px;
+    flex: 1;
+}
+
+#Contact .card-title {
+    font-weight: bold;
+}
+
+#Contact p{
+    line-height: 1.6;
+}
+
+
+
+
+@media screen and (width <= 800px ) {
+    #Contact { 
+        margin: 0 5px;
+    }
+
+    #Contact .container {
+        padding: 5px;
+    }
+
+    #Contact .card {
+        margin-right: 0px;
+    }
+
+
+
+
+    #ContactDescription p{
+        line-height: 1.6;
+        padding: 0 20px;
+
+    }
+
+
+
+}
+
+
+@media screen and (width < 500px ) and (width >= 359px ) {
+
+
+    #Contact #emailBox {
+        max-width: 100%;
+        min-width: 100%;
+      }
+
+}
+
+
+
+
+
+@media screen and (width >= 800px )  {
+
+
+
+    #Contact #socialMedias    {
+        margin-left: 150px;
+    }
+    
+}
+
+
+@media screen and (width >= 1200px )  {
+
+
+
+    #Contact #socialMedias    {
+        margin-left: 0px;
+    }
+    
+}
+
+
+
+
+
+
+
+
+
+@media screen and (width < 360px ) {
+    #Contact { 
+        margin: 0 5px;
+    }
+
+    #Contact .container {
+        padding: 5px;
+    }
+
+    #Contact .card {
+        margin-right: 0px;
+    }
+
+
+    #Contact #socialMedias    {
+        margin-left: 0px;
+    }
+
+    #Contact #emailBox {
+        max-width: 100%;
+        min-width: 100%;
+    }
+    
+    
+
+}
+
+
+#Contact  #credits {
+    margin-right: 0;
+}
+
+#Contact #contactInformation {
+
+}
+
+
+
+
+
+

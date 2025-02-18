@@ -1,0 +1,290 @@
+
+
+#Blog nav.fullScreen ul li img{
+    margin-top: 0px;
+}
+
+#Blog nav ul {
+    margin: 5px 15px;
+}
+
+#Blog nav ul li:nth-child(2){
+    margin-left: auto;
+}
+
+#Blog nav ul li:nth-child(3){
+    display: none;
+}
+
+#Blog div.container{
+    display: flex;
+    flex-direction: row;
+}
+
+
+
+#Blog #asideOpenButton{
+    width: 50px;
+    height: 350px;
+    border-radius: 0 100% 100% 0;
+    background-color: rgb(255, 255, 255);
+    align-self: center;
+    cursor: pointer;
+    align-items: center;
+    display: none; /* shows only when reading a blog post */
+    font-size: 2rem;
+} 
+
+#Blog aside{
+    flex-direction: column;
+    width: 360px;
+    display: flex; /* Display dynamicly same as 
+    below using js, switch between flex and none */
+    margin-right: 15px;
+    max-height: calc(100vh - 150px);
+    
+}
+
+#Blog aside ul {
+    padding: 0 20px;
+}
+
+#Blog aside #tableOfContent ul li {
+    list-style-type: none;
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    cursor: pointer;
+}
+
+#Blog aside #tableOfContent {
+    border-radius: 10px;
+    height: calc(100vh - 200px);
+    margin-bottom: 15px;
+    overflow: auto;
+}
+
+#Blog aside #tableOfContent span {
+    display: block;
+    text-align: center;
+    font-size: 1.2rem;
+    margin: 25px auto;
+}
+
+#Blog aside button {
+   width: 100%;
+   margin: 15px;
+}
+
+
+#Blog #summaryPostHolder{
+    overflow: auto;
+    height: calc(100vh - 120px);
+    margin: auto 0;
+    margin: 0 15px;
+    flex-direction: column;
+    flex:1;
+}
+
+#Blog #summaryPostHolder .postSummary {
+    flex-direction: column;
+    padding: 15px;
+    margin: 0 20px 40px 20px;
+    display: flex; /*switch display between flex and none
+                    and none Dynamicly using js */
+    border-radius: 10px;
+    font-size: 1.2rem; /* Comfortable reading size */
+    cursor: pointer;
+    transition: background-color 0.3s ease,
+     border-color 0.3s ease,
+     box-shadow 0.5s ease; /* Smooth transition */
+    border: 3px solid transparent; /* Invisible edges initially */
+
+}
+
+
+
+#Blog #summaryPostHolder .postSummary:hover{
+    /* border-color: rgba(241, 224, 129, 0.589); 
+    box-shadow: inset 0px 0px 3px 3px rgba(255,215,0,0.5); */
+    /* 
+    border-color: gold;
+    box-shadow: inset 0px 0px 3px 3px gold; */
+
+    border-color: silver;
+    box-shadow: inset 0px 0px 5px 5px silver;
+
+}
+
+
+
+#Blog  #summaryPostHolder .postSummary h4{
+    font-family: Roboto;
+    font-size: 1.5rem;
+    margin-bottom: 0px;
+    cursor: pointer;
+    margin: 0;
+    padding: 15px 0;
+}
+
+
+#Blog #summaryPostHolder  .postSummary  p {
+    font-size: 1.25rem;
+    text-align: justify;
+    margin-left: 15px;
+    line-height: 1.6; 
+    font-family: "Roboto"; 
+    margin: 1em 0; 
+    padding: 0 20px;
+
+}
+
+/* 
+commented because the button at blog.js also has been commentend out!
+  #Blog  #summaryPostHolder  .postSummary  button {
+    align-self: flex-end;
+    width: 200px;
+    font-size: .8rem;
+    padding: 10px;
+    margin: 0;
+} */
+
+#Blog article {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    max-width: 800px;
+    margin-bottom: 50px;
+}
+
+
+
+
+
+
+#Blog article {
+    text-align: justify;
+    font-size: 1.4rem;
+}
+#Blog article h2,
+#Blog article h3,
+#Blog article h4{
+    font-weight: 400;
+    margin-bottom: 10px;
+
+}
+
+#Blog article h1
+{
+    font-size: 3rem;
+    font-weight: 400;
+}
+
+#Blog article h2{
+    font-size: 2.5rem;
+}
+
+#Blog article h3{
+    font-size: 1.8rem;
+}
+
+#Blog article h4{
+    font-size: 1.6rem;
+}
+
+
+
+#Blog article p
+{
+    width: 100%;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    margin-top: 0;
+    text-align: justify;
+
+}
+
+#Blog article img {
+    margin: 15px auto;
+    max-width: 100%;
+    display: block;
+    border-radius: 25px;
+    height: auto;
+}
+
+#Blog article code[class] {
+    font-size: 1rem;
+    background-color: silver;
+    display: block;
+    width: 100%;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+#Blog article ul {
+    margin-left: 1.5rem;
+    padding-left: 1rem;
+    margin-top: 0px;
+}
+
+#Blog article a{
+    color: darkolivegreen;
+}
+
+#Blog article img + em {
+    display: block;
+    text-align: center;
+}
+
+#Blog article blockquote{
+    margin-left: 20px;
+    margin-top: 0px;
+}
+
+
+
+@media screen and (width > 1350px) {
+
+    #Blog #summaryPostHolder {
+        display: flex !important;
+    }
+
+    #Blog aside {
+        width: 360px !important;
+    }
+
+}
+
+
+
+@media screen and (width < 1000px) {
+    #Blog  {
+        margin: 0;
+    }
+    #Blog nav ul li:nth-child(3){
+        display: flex;
+    }
+
+    #Blog aside {
+        display: none;
+        width: 100%;
+    }
+
+    #Blog aside{
+        margin-right: 5px;
+    }
+
+    #Blog #summaryPostHolder{
+        margin: 0px 0px 0 0;
+
+    }
+
+    #Blog .container div#asideOpenButton {
+        display: none !important;
+    }
+
+
+    #Blog article {
+        margin: 0 25px;
+    }
+}
+

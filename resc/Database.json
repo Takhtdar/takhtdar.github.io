@@ -1,0 +1,48 @@
+{
+    "blog": [
+        {
+            "id": "0x25",
+            "filename": "Havij",
+            "title": "Hello World 1",
+            "summary": "Markdown is a lightweight markup language that allows you to create clean and structured content for blogs, documentation, and more. Its simplicity makes it a favorite among developers, writers, and bloggers alike."
+        },
+        {
+            "id": "2",
+            "filename": "favorite",
+            "title": "Hello World for second time 2",
+            "summary": "This is a short version of the long version of this blog post! Post 2"
+        }
+    ],
+    "reviews": {
+        "books": [
+            {
+                "id": 1,
+                "filename": "To kill a mockingbird",
+                "title": "To Kill a Mockingbird"
+            },
+            {
+                "id": 2,
+                "filename": "1984",
+                "title": "1984"
+            }
+        ],
+        "Movies and Series": [
+            {
+                "id": 1,
+                "filename": "John Wick 1",
+                "title": "John Wick 1",
+                "post": "This is content of the Movies!"
+            },
+            {
+                "id": 2,
+                "filename": "Green Mile",
+                "title": "Green Mile"
+            },
+            {
+                "id": 3,
+                "filename": "The Godfather 1",
+                "title": "The Godfather 1"
+            }
+        ]
+    }
+}

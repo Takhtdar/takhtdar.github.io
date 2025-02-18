@@ -1,0 +1,277 @@
+#Reviews nav.fullScreen ul{
+    margin: 0;
+}
+
+#Reviews nav.fullScreen ul li img{
+    margin-top: 0px;
+}
+
+#Reviews nav ul li.active{
+    /* color:white;
+    background-color: #000957; */
+    background-color: silver;
+    color: black;
+    padding: 10px;
+    border-radius: 6px;
+}
+
+#Reviews nav.fullScreen ul li{
+    padding: 5px 25px;
+}
+
+#Reviews   nav   ul   li.active   span{
+    display: flex;
+    flex-direction: row;
+    margin: 0px 25px 0 25px;
+}
+
+#Reviews   nav.fullScreen   ul   li:last-child{
+    display: none;
+}
+
+#Reviews .container {
+    /* max-height: calc(100vh - 450px); */
+    display: flex;
+    flex-direction: row;
+}
+
+#Reviews   .container   aside {
+    display: flex;
+    flex-direction: column;
+    width: 480px;
+    /* margin: auto 0; */
+}
+
+
+#Reviews   .container   aside   .tableOfContent {
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    max-height: calc(100vh - 450px);
+    margin: 0 0 15px 0;
+    border-radius: 15px;
+    height: 100%;
+}
+
+#Reviews   .container   aside   .tableOfContent   ul{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+    padding-left: 0px;
+    padding-right: 15px;
+}
+
+#Reviews   .container   aside   .tableOfContent   ul   li {
+    display: block;
+    font-size: 1.2rem;
+    list-style-type: none;
+    margin-bottom: 15px;
+    padding:10px 25px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+#Reviews   .container   aside   .tableOfContent   ul   li.active {
+    /* background-color: #000957; */
+    background-color: silver;
+    color: black;
+}
+
+#Reviews   .container   aside   .tableOfContent   ul   li:first-child{
+    display: none;
+}
+
+#Reviews   .container   aside   #vitrin {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding: 15px;
+    margin: 15px 0;
+    border-radius: 15px;
+}
+
+#Reviews   .container   aside   #vitrin   img {
+    width: 100%;
+    height: auto;
+    max-width: 100px;
+    max-height: 200px;
+}
+
+#Reviews   .container   aside   button {
+    width: 100%;
+}
+
+#Reviews nav.fullScreen ul li:nth-last-child(2){
+    display: flex;
+    margin-left: auto;
+}
+
+
+#Reviews #ReviewCat{
+    display: none; 
+}
+
+
+#Reviews   .container   #contentReview {
+    display: flex;
+    flex-direction: column;
+    padding: 15px ;
+    margin: 0 auto;
+    overflow: auto;
+    height: calc(100vh - 120px);
+    max-width: 800px;
+    text-align: justify;
+
+}
+
+#Reviews   .container   #contentReview p{
+    font-size: 1.4rem;
+    line-height: 1.6;
+}
+
+#Reviews #contentReview h2  +  p {
+    margin-top: 10px;
+}
+
+
+#Reviews #contentReview h2,
+#Reviews #contentReview h3, 
+#Reviews #contentReview h4 {
+    font-weight: 400;
+    margin-bottom: 0;
+
+}
+
+
+
+#Reviews #contentReview h1 {
+    font-size: 2rem;
+    font-weight: 400;
+}
+
+
+#Reviews #contentReview h2 {
+    font-size: 1.8rem;
+}
+#Reviews #contentReview h3 {
+    font-size: 1.6rem;
+
+} 
+#Reviews #contentReview h4 {
+    font-size: 1.4rem;
+} 
+
+
+#Reviews #contentReview ul {
+    font-size: 1.3rem;
+    line-height: 1.6;
+    padding-left: 20px;
+} 
+
+
+@media screen and (width < 1450px) {
+
+    #Reviews div.container aside {
+        width: 100%;
+        margin: 15px;
+    }
+
+    #Reviews nav.fullScreen ul li:last-child {
+        display: block;
+        z-index: 5;
+      }
+
+    #Reviews nav ul li.sm-hide {
+    display: none;
+    }
+
+    #Reviews .container #contentReview{
+    display: none;
+    }
+
+    #Reviews #ReviewCat{
+        display: flex; 
+    }
+
+
+}
+
+
+
+@media screen and (width < 400px) {
+
+    #Reviews nav.fullScreen ul li{
+        padding: 5px 10px;
+    }
+}
+
+
+
+
+@media screen and (width < 1000px) {
+
+    #Reviews {
+        margin: 0px;
+    }
+
+    #Reviews .container {
+        margin: 0 10px;
+    }
+    
+    #Reviews nav ul .sm-hide{
+        display: none;
+    } 
+    
+    #Reviews nav.sidebar ul {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    padding: 0 5px 0 30px;
+
+    }
+    #Reviews nav.sidebar ul li {
+        height: 50px;
+        padding: 10px;
+    }
+
+    #Reviews nav.fullScreen ul li:last-child{
+        display: block;
+        z-index: 5;
+    }
+
+    
+    #Reviews nav.fullScreen ul{
+        z-index: 5;
+    }
+
+    #Reviews .container aside{
+        width: 100%;
+    }
+    #Reviews .container aside .tableOfContent ul li {
+        font-size: 16px;
+        cursor: pointer;
+    }
+
+    #Reviews   .container   aside   .tableOfContent   ul   li:first-child{
+        display: none;
+    }
+    
+
+    #Reviews .container aside #vitrin{
+        width: 100%;
+        order: -1;
+    }
+}
+
+@media screen and (height < 650px){
+    #Reviews .container aside #vitrin {
+        display: none;
+    }
+
+    #Reviews .container aside .tableOfContent {
+        max-height: 100vh;
+    }
+}
+
+

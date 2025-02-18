@@ -1,0 +1,7 @@
+{
+    "files.autoSave": "onFocusChange",
+    "editor.minimap.enabled": false,
+    "editor.minimap.showRegionSectionHeaders": true,
+    "editor.minimap.showMarkSectionHeaders": true,
+    "workbench.tree.enableStickyScroll": false
+}

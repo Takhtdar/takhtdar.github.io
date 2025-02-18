@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+  <link rel="stylesheet" href="resc/css/main.css" />
+  <title>Takhtdar Personal Websites</title>
+  <link rel="icon" href="" />
+  <script type="module" src="/resc/js/App.js" defer></script>
+  <script src="/resc/js/UI.js"></script>
+  <script src="/resc/js/showdown.min.js"></script>
+</head>
+
+<body>
+  <section id="Header">
+    <nav class="fullScreen">
+      <ul>
+        <li>
+          <h1><a>Takhtdar</a></h1>
+        </li>
+        <!-- <li class="Header-Nav-Item sm-hide"><a onclick="rscrollToSection('Projects')">Projects</a></li> -->
+        <li class="Header-Nav-Item sm-hide">
+          <a onclick="rscrollToSection('Blog')">Blog</a>
+        </li>
+        <li class="Header-Nav-Item sm-hide">
+          <a onclick="rscrollToSection('Reviews')">Reviews</a>
+        </li>
+        <li class="Header-Nav-Item sm-hide" onclick="">
+          <a onclick="rscrollToSection('Contact')">Contact</a>
+        </li>
+        <!-- Shows only at Width < 1350px -->
+        <li onclick="HeaderMenu()" id="HeaderBurgur">
+          <a href="#"><img src="resc/assets/img/more.png" alt="" /></a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- showen when user click on more button at top! -->
+    <nav class="sidebar shadow">
+      <ul>
+        <!-- <li><a onclick="rscrollToSection('Projects')">Projects</a></li> -->
+        <li class="shadow">
+          <a onclick="rscrollToSection('Blog'); HeaderMenu()">Blog</a>
+        </li>
+        <li class="shadow">
+          <a onclick="rscrollToSection('Reviews');HeaderMenu()">Reviews</a>
+        </li>
+        <li class="shadow">
+          <a onclick="rscrollToSection('Contact');HeaderMenu()">Contact</a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Information about the author of website! -->
+    <div id="introduction">
+      <div>
+        <p>
+          <span id="welcomeMessage">Welcome to Personal Website of </span>
+          <span id="name">Seyed Ahmad Takhtdar</span>
+        </p>
+        <h2 id="title">Amateur Software Engineer</h2>
+        <p>Currently working at Takhtdar’s Corner</p>
+
+        <div id="Icons" onmouseleave="clearTooltip()">
+          <img onmouseover="describe('Python: Web2, Windows, SysAdmin Automation')" id="iconPython"
+            src="resc/assets/img/python.png" alt="Python Programming Langauge Icon" />
+          <img onmouseover="describe('Exploring The Core of Windows Internals')" id="iconWindows"
+            src="resc/assets/img/computer.png" alt="Microsoft Windwos Internals Icon" />
+          <img onmouseover="describe('C++ Newbie, Cross Platform Programming')" id="iconCPP"
+            src="resc/assets/img/cpp.png" alt="CPP Programming Langauge Icon" />
+          <img onmouseover="describe('C: Low-level Programming Foundation')" id="IconC" src="resc/assets/img/C.png"
+            alt="C Programming Langauge Icon" />
+          <img onmouseover="describe('Assembly: x86, x86_64 Reverse Engineering')" id="IconAssembly"
+            src="resc/assets/img/assembly.png" alt="Assembly x86_64 Langauge Icon" />
+          <div id="tooltip"></div>
+        </div>
+
+        <button class="shadow" onclick="rscrollToSection('Blog')">
+          Blog ↓
+        </button>
+      </div>
+
+      <!-- Update the photo -->
+
+      <img src="resc/assets/img/Rectangle.svg" class="" id="HIcon" alt="Seyed Ahmad Takhtdar" />
+    </div>
+  </section>
+
+  <!-- Create Blog -->
+  <section id="Blog">
+    <nav class="shadow fullScreen">
+      <ul>
+        <li>
+          <h3>Blog</h3>
+        </li>
+        <li>
+          <a onclick="rscrollToSection('Header')"><img src="resc/assets/img/arrowup.png" alt="" /></a>
+        </li>
+        <li>
+          <a onclick="rscrollToSection('Blog')"><img src="resc/assets/img/more.png" alt="" /></a>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="container">
+      <div id="asideOpenButton" class="shadow">↳</div>
+
+      <aside>
+        <div class="shadow" id="tableOfContent">
+          <span>Table of Content</span>
+          <ul></ul>
+        </div>
+        <button class="shadow" onclick="rscrollToSection('Reviews')">
+          See Content Reviews ↓
+        </button>
+      </aside>
+      <div id="summaryPostHolder">
+        <article class="displaynone"></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Create Reviews -->
+  <section id="Reviews">
+    <nav class="shadow fullScreen">
+      <ul>
+        <li>
+          <h3>Reviews</h3>
+        </li>
+        <li title="back to blog">
+          <a onclick="rscrollToSection('Blog')"><img src="resc/assets/img/arrowup.png" alt="" /></a>
+        </li>
+        <li><img src="resc/assets/img/more.png" alt="" /></li>
+      </ul>
+    </nav>
+
+    <div class="container">
+      <aside>
+        <div class="tableOfContent shadow" id="ReviewCat">
+          <ul>
+            <!--  reading this from DB -->
+            <li class="shadow" style="display: none"></li>
+          </ul>
+        </div>
+
+        <div class="tableOfContent shadow">
+          <ul id="ReviewToC">
+            <!--  reading this from DB -->
+            <li class="shadow"></li>
+          </ul>
+        </div>
+
+        <div id="vitrin" class="shadow">
+          <img src="resc/assets/img/book cover css.jpg" alt="book cover" />
+          <img src="resc/assets/img/book cover engineering.jpg" alt="book cover" />
+        </div>
+        <button class="shadow" onclick="rscrollToSection('Contact')">
+          Contact Us ↓
+        </button>
+      </aside>
+
+      <div id="contentReview"></div>
+    </div>
+  </section>
+
+  <section id="Contact">
+    <div class="container">
+      <div id="ContactDescription" class="shadow card">
+        <h3>Contact Us</h3>
+        <p>
+          "I invite inquiries from fellow enthusiasts and researchers who are
+          passionate about reverse engineering, software programming, and
+          malware analysis to join the next gathering event. While I am not an
+          expert, my deep interest in these areas drives my ongoing learning
+          and collaboration. If you are looking to engage in exploratory
+          research, develop exploits, or discuss books related to technology
+          and programming, I would be delighted to connect. Together, we can
+          share knowledge and contribute to advancing our understanding in
+          these fields."
+        </p>
+      </div>
+
+      <div id="contactInformation">
+        <div class="shadow card" id="emailBox">
+          <span class="card-title" style="align-self: center">Email - in Hexadecimal:</span>
+          <button class="shadow" data="0x536579656461686d61644074616b68746461722e6972">
+            Get Email in Clipboard
+          </button>
+          <button class="shadow">Download Public PGP Key!</button>
+        </div>
+
+        <div id="socialMedias" class="card">
+          <span class="card-title">Social Medias:</span>
+          <ul>
+            <li>
+              <img src="resc/assets/img/goodreads.png" alt="Goodreads Icon" />Goodreads
+            </li>
+            <li><img src="resc/assets/img/x.png" alt="Goodreads Icon" />X</li>
+            <li>
+              <img src="resc/assets/img/telegram.png" alt="Goodreads Icon" /><s>Telegram</s>
+            </li>
+            <li>
+              <img src="resc/assets/img/instagram.png" alt="Goodreads Icon" /><s>Instagram</s>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="card sm-hide"></div>
+
+      <div class="shadow card sm-hide">
+        <span class="card-title">Interested in:</span>
+        <ul>
+          <li>Software Vulnerability and Security Research</li>
+          <li>Native and .NET Software Reverse Engineering</li>
+          <li>Desktop Device Driver Development (Windows & Linux)</li>
+        </ul>
+      </div>
+
+      <div class="card shadow sm-hide">
+        <span class="card-title">Experiences:</span>
+        <ul>
+          <li>Web2 Full-Stack Development</li>
+          <li>Sophisticated Malware Analysis</li>
+          <li>Windows Desktop Software Development</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="container">
+      <div id="inspiredBy" class="shadow card sm-hide">
+        <span class="card-title">Inspired by:</span>
+        <ul>
+          <li>John Doe</li>
+          <li>Yoga Brazky</li>
+          <li>Lonardo Davinchi</li>
+          <li>Johnatan McGool</li>
+          <li>Linkan Abraham</li>
+        </ul>
+      </div>
+
+      <div id="credits" class="shadow card">
+        <span class="card-title">Credits:</span>
+        <div id="creditsULWrapper">
+          <ul>
+            <li>
+              <img src="resc/assets/img/python.png" alt="Python Programming Langauge" />taken from
+              <a href="https://www.python.org/community/logos/">here</a>
+            </li>
+            <li>
+              <img src="resc/assets/img/computer.png" alt="Microsoft Windwos Internals" />taken from <a
+                href="#">here</a>
+            </li>
+            <li>
+              <img src="resc/assets/img/cpp.png" alt="CPP Programming Langauge" />taken from <a href="#">here</a>
+            </li>
+            <li>
+              <img src="resc/assets/img/C.png" alt="C Programming Langauge" />taken from <a href="#">here</a>
+            </li>
+            <li>
+              <img src="resc/assets/img/assembly.png" alt="Assembly x86_64 Langauge" />taken from <a href="#">here</a>
+            </li>
+          </ul>
+
+          <ul>
+            <li>
+              <img src="resc/assets/img/python.png" alt="Python Programming Langauge" />taken from <a href="#">here</a>
+            </li>
+            <li>
+              <img src="resc/assets/img/computer.png" alt="Microsoft Windwos Internals" />taken from <a href="#">
+                here</a>
+            </li>
+            <li>
+              <img src="resc/assets/img/cpp.png" alt="CPP Programming Langauge" />taken from <a href="#"> here</a>
+            </li>
+            <li>
+              <img src="resc/assets/img/C.png" alt="C Programming Langauge" />
+              taken from <a href="#"> here</a>
+            </li>
+            <li>
+              <img src="resc/assets/img/assembly.png" alt="Assembly x86_64 Langauge" />
+              taken from <a href="#"> here</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card sm-hide"></div>
+    </div>
+
+    <footer class="shadow">
+      <span id="fversion">Version: Demo</span>
+      <span id="copyright">Copyrighted Information</span>
+      <a onclick="rscrollToSection('Header')"><img src="resc/assets/img/arrowup.png" alt="" />Back to Top</a>
+    </footer>
+  </section>
+</body>
+
+</html>
