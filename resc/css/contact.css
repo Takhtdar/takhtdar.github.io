@@ -93,7 +93,7 @@
 
 
 
-#Contact .container #credits #creditsULWrapper{
+#Contact .ULWrapper{
     display: flex;
     flex-direction: row; /* Places ul elements side-by-side */
     gap: 1rem;           /* Adds space between the ul elements */
