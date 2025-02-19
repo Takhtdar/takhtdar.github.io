@@ -260,6 +260,13 @@ nav.fullScreen ul li img {
 
 @media (width < 800px) {
 
+    #Header #introduction #HIcon {
+        width: 120px;
+        min-width: 90px;
+        height: 120px;
+    }
+
+
     #Header nav.fullScreen {
         margin: 0px;
     }
@@ -342,11 +349,6 @@ nav.fullScreen ul li img {
         display: none !important;
     }
 
-    #Header #introduction #HIcon {
-        width: 120px;
-        min-width: 90px;
-        height: 120px;
-    }
 
     #Header #introduction button {
         margin-top: 5px;
