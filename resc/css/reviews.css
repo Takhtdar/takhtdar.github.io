@@ -198,7 +198,7 @@
 }
 
 
-@media screen and (width < 1400px) {
+@media screen and (width < 1300px) {
 
     #Reviews nav.fullScreen ul li:last-child {
         display: block;

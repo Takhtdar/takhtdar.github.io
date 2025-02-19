@@ -15,8 +15,8 @@ export async function initReview() {
     let Reviews = document.querySelector("#Reviews > nav:nth-child(1) > ul:nth-child(1) > li:nth-child(1)");
 
     Reviews.addEventListener("click", function(){
-        // on click on Reviews do something. like I don't know kill yourself? xd - sure. xd
-        // nah really we need to hide #contentReview and show aside simple as that!
+        // on click on Reviews do something. 
+        // we need to hide #contentReview and show aside simple as that!
     });
 }
 
@@ -185,7 +185,7 @@ export async function showReview(filename, currentElement) {
     // in case screen was small hide menu (which is shown by defualt)!
     // and only if user was here to see a post!
     if ((/\/Reviews\/.+/.test(window.location.pathname)) &&
-    (document.getElementById("Reviews").clientWidth < 1350)
+    (document.body.clientWidth < 1350)
     ) {
         ReviewsMenu(); // Only show the menu if there's no specific post in the URL
     }
