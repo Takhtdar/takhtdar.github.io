@@ -153,7 +153,7 @@ function removeActiveClassFromAllReviewsTableElements() {
 export async function showReview(filename, currentElement) {
     console.log("filename" + filename + " : " + currentElement)
     if(filename === "undefined" ) {return}
-    document.querySelector("#contentReview").dis
+    //document.querySelector("#contentReview").dis
 
     removeActiveClassFromAllReviewsTableElements()
     if(currentElement !== "undefined") currentElement.classList.add("active");
@@ -167,9 +167,20 @@ export async function showReview(filename, currentElement) {
  * check category before selecting to be sure it's not already active!
  */
 
+    let reviews = ((await Database.getInstance())["reviews"]);
+    let version = 1.0;
+
+    for (const category in reviews) {
+        const posts = reviews[category]; // Get the array of posts
+        const post = posts.find(post => post.filename === filename);
+        if (post) {
+            version = post.version; 
+        }
+    }
 
     
-    let content = await Database.fetchMarkdownData(`/resc/reviews/${filename}.md`);
+
+    let content = await Database.fetchMarkdownData(`/resc/reviews/${filename}.md`, version);
     var converter = new showdown.Converter(),
     text      = content,
     html      = converter.makeHtml(text);

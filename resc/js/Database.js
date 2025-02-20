@@ -1,8 +1,9 @@
 export const Database = (function () {
     let instance = null; // To store the fetched data
+    const cacheName = "markdown-cache"; // Cache name for Markdown files
 
     // Internal Function
-    async function fetchData() { 
+    async function fetchData() {
         try {
             const response = await fetch(document.location.origin + "/resc/Database.json");
             if (!response.ok) {
@@ -16,14 +17,30 @@ export const Database = (function () {
         }
     }
 
-    async function fetchMarkdownData(address) { 
+    async function fetchMarkdownData(address, version) {
         try {
-            const response = await fetch(document.location.origin + address);
+            // Open the cache
+            const cache = await caches.open(cacheName);
+
+            // Check if the file is already cached
+            const cachedResponse = await cache.match(document.location.origin + `${address}?v=${version}`);
+            if (cachedResponse) {
+                console.log("Serving markdown from cache:", `${address}?v=${version}`);
+                return cachedResponse.text();
+            }
+
+            // If not cached, fetch from the server
+            console.log("Fetching markdown from server:", `${address}?v=${version}`);
+            const response = await fetch(document.location.origin + `${address}?v=${version}`);
             if (!response.ok) {
                 throw new Error("Network response was not ok");
             }
-            const dataObject = await response.text();
-            return dataObject;
+
+            // Cache the response for future use
+            await cache.put(document.location.origin + `${address}?v=${version}`, response.clone());
+
+            // Return the fetched content
+            return response.text();
         } catch (error) {
             console.error("Error fetching markdown data:", error);
             return null;

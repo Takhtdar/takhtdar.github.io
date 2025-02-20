@@ -1,4 +1,4 @@
-# Welcome to My Blog
+# Welcome to My Blog 2
 
 This is a sample blog post written in Markdown. It's designed to test the layout, font, and formatting of your website. Below, you'll find multiple headings, paragraphs, and even a few links to see how everything looks.
 

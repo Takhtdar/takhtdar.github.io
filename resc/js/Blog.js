@@ -61,6 +61,7 @@ export async function showBlogPost(PostID) {
 
     let db = await Database.getInstance();
     let filename = db.blog.find(post => post.id == PostID).filename;
+    let version = db.blog.find(post => post.id == PostID).version;
 
 
     let summaryPostHolder = document.querySelector("#summaryPostHolder");
@@ -69,7 +70,7 @@ export async function showBlogPost(PostID) {
 
     window.history.pushState('', 'unUsed', '/Blog/Read/' + PostID);
 
-    let content = await Database.fetchMarkdownData(`/resc/blog/${filename}.md`);
+    let content = await Database.fetchMarkdownData(`/resc/blog/${filename}.md`, version);
     var converter = new showdown.Converter(),
         text = content,
         html = converter.makeHtml(text);
