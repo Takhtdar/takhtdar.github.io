@@ -70,7 +70,7 @@ export async function showBlogPost(PostID) {
 
     window.history.pushState('', 'unUsed', '/Blog/Read/' + PostID);
 
-    let content = await Database.fetchMarkdownData(`/resc/blog/${filename}.md`, version);
+    let content = await Database.fetchMarkdownData(filename, version);
     var converter = new showdown.Converter(),
         text = content,
         html = converter.makeHtml(text);

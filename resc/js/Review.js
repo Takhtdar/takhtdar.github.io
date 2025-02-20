@@ -87,10 +87,21 @@ async function setReviewTOC(category) {
         item.classList.add("shadow");
         item.innerText = activeCat[i].title;
 
+        item.setAttribute("data-title", activeCat[i].title);
+        item.setAttribute("data-version", activeCat[i].version);
         item.setAttribute("data-filename", activeCat[i].filename);
+        item.setAttribute("data-category", category);
+        
+
+
         item.addEventListener("click", function(event) {
-            let id = item.getAttribute("data-filename");
-            showReview(id, event.target);
+            showReview(
+                event.currentTarget,
+                item.getAttribute("data-version"), 
+                item.getAttribute("data-title"), 
+                item.getAttribute("data-filename"),
+                item.getAttribute("data-category"));
+                
         });
         TOC.appendChild(item);
     }
@@ -150,14 +161,14 @@ function removeActiveClassFromAllReviewsTableElements() {
 }
 
 
-export async function showReview(filename, currentElement) {
-    console.log("filename" + filename + " : " + currentElement)
+export async function showReview(currentElement, version, title, filename, category ) {
+
+    console.log("title" + title + " : " + currentElement)
     if(filename === "undefined" ) {return}
-    //document.querySelector("#contentReview").dis
 
     removeActiveClassFromAllReviewsTableElements()
     if(currentElement !== "undefined") currentElement.classList.add("active");
-    window.history.pushState('', 'unUsed', `/Reviews/${filename}`);
+    window.history.pushState('', 'unUsed', `/Reviews/${category}/${title}`);
 
 
 /**
@@ -167,20 +178,7 @@ export async function showReview(filename, currentElement) {
  * check category before selecting to be sure it's not already active!
  */
 
-    let reviews = ((await Database.getInstance())["reviews"]);
-    let version = 1.0;
-
-    for (const category in reviews) {
-        const posts = reviews[category]; // Get the array of posts
-        const post = posts.find(post => post.filename === filename);
-        if (post) {
-            version = post.version; 
-        }
-    }
-
-    
-
-    let content = await Database.fetchMarkdownData(`/resc/reviews/${filename}.md`, version);
+    let content = await Database.fetchMarkdownData(filename, version);
     var converter = new showdown.Converter(),
     text      = content,
     html      = converter.makeHtml(text);
@@ -221,4 +219,30 @@ function ReviewsMenu() {
         category.classList.add("displayflex");
     }
 
+}
+
+export async function RouteToReview(category, title) {
+    // Fetch the database instance
+    let db = await Database.getInstance();
+
+    console.log("category, title" + category + ", " + title)
+    // Validate if the category exists
+    if (!db["reviews"] || !db["reviews"][category]) {
+        console.error(`Category "${category}" not found in reviews.`);
+        return;
+    }
+
+    // Search for the item by title in the given category
+    const item = db["reviews"][category].find(entry => entry.title === title);
+
+    if (!item) {
+        console.error(`Title "${title}" not found in category "${category}".`);
+        return;
+    }
+
+    // Extract the details from the item
+    const { version, filename } = item;
+
+    // Call showReview with the extracted data
+    showReview("undefined", version, title, filename, category);
 }

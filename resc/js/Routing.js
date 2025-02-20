@@ -1,5 +1,5 @@
 import { showBlogPost } from "./Blog.js";
-import { showReview } from './Review.js'
+import { RouteToReview } from './Review.js'
 
 
 export async function initRouting() {
@@ -30,8 +30,12 @@ async function ProcessGetRequest() {
         urlParams.has('func') && (urlParams.get('func')) && urlParams.has('id') 
         ){
             switch (section){
+                /** here we need a little of fix! */
                 case "Blog": await showBlogPost(urlParams.get('id')); break;
-                case "Reviews": await showReview(urlParams.get('func'), urlParams.get('id')); break; 
+                case "Reviews":
+                    let category = urlParams.get('func');
+                    let title = urlParams.get('id');
+                    await RouteToReview(category, title); break; 
             }
         }
     }

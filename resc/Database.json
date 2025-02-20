@@ -3,14 +3,14 @@
         {
             "id": 1,
             "version" : "1.0",
-            "filename": "Havij",
+            "filename": "/posts/blog/Havij.md",
             "title": "Hello World 1",
             "summary": "Markdown is a lightweight markup language that allows you to create clean and structured content for blogs, documentation, and more. Its simplicity makes it a favorite among developers, writers, and bloggers alike."
         },
         {
             "id": 2,
             "version" : "1.0",
-            "filename": "favorite",
+            "filename": "/posts/blog/favorite.md",
             "title": "Hello World for second time 2",
             "summary": "This is a short version of the long version of this blog post! Post 2"
         }
@@ -20,34 +20,33 @@
             {
                 "id": 1,
                 "version" : "1.0",
-                "filename": "To kill a mockingbird",
+                "filename": "/posts/reviews/books/To kill a mockingbird.md",
                 "title": "To Kill a Mockingbird"
             },
             {
                 "id": 2,
                 "version" : "1.0",
-                "filename": "1984",
+                "filename": "/posts/reviews/books/1984.md",
                 "title": "1984"
             }
         ],
-        "Movies and Series": [
+        "films": [
             {
                 "id": 1,
                 "version" : "1.2",
-                "filename": "John Wick 1",
-                "title": "John Wick 1",
-                "post": "This is content of the Movies!"
+                "filename": "/posts/reviews/films/John Wick 1.md",
+                "title": "John Wick 1"
             },
             {
                 "id": 2,
                 "version" : "1.0",
-                "filename": "Green Mile",
+                "filename": "/posts/reviews/films/Green Mile.md",
                 "title": "Green Mile"
             },
             {
                 "id": 3,
                 "version" : "1.0",
-                "filename": "The Godfather 1",
+                "filename": "/posts/reviews/films/The Godfather 1.md",
                 "title": "The Godfather 1"
             }
         ]
