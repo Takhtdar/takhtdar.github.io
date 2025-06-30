@@ -114,6 +114,7 @@
 #Contact .container .card button{
     width: 250px;
     font-size: 1rem;
+    margin: 50px 0;
 }
 
 
@@ -121,9 +122,15 @@
     word-wrap: break-word; 
 }
 
+#Contact .container #emailBox{
+  align-items: center;
+
+}
+
 #Contact .container #contactInformation {
     flex-direction: row;
-  display: flex;
+    display: flex;
+    margin: auto;
 }
 
 @media screen and (width < 1200px) {
@@ -141,7 +148,7 @@
         display: flex;
         flex-direction: row;
         justify-content: space-evenly;
-
+        margin: auto;
     }
 
     #Contact .container:nth-of-type(2){
