@@ -129,12 +129,12 @@ function copyMailtoClipboard(){
     emailBtn.addEventListener("click", function(){
         navigator.clipboard.writeText(emailBtn.getAttribute("data"));
         emailBtn.textContent = "copied to clipboard!"
-        emailBtn.style.backgroundColor = "darkseagreen"
+        emailBtn.style.backgroundColor = "lightgray"
 
         setTimeout(() => {
             emailBtn.textContent = emailBtnContent
             emailBtn.style.backgroundColor = "white"
-        }, 2000);
+        }, 1000);
     
 
         
