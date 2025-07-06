@@ -41,7 +41,7 @@
     display: flex; /* Display dynamicly same as 
     below using js, switch between flex and none */
     margin-right: 15px;
-    max-height: calc(100vh - 150px);
+    /*max-height: calc(100vh - 150px);*/
     
 }
 
