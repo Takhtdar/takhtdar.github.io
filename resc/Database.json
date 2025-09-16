@@ -3,9 +3,9 @@
         {
             "id": 1,
             "version" : "1.0",
-            "filename": "/posts/blog/Havij.md",
-            "title": "Hello World 1",
-            "summary": "Markdown is a lightweight markup language that allows you to create clean and structured content for blogs, documentation, and more. Its simplicity makes it a favorite among developers, writers, and bloggers alike."
+            "filename": "/posts/blog/Draft.md",
+            "title": "Task, Scheduling, and Bar",
+            "summary": "we all have things to do. reading this blog for start is a thing that you decided to do. unlike many other tasks you have to do, paying attention to the following message isn't in your schedule. but if you want to plan for reading this later, there are at least two questions you needed to answer. (a) on what date do you want to schedule this task for, (b) how do you know that date isn't fully occoupied with a bunch of other tasks? tasks that might compeled to you by sociaity, naiugbors, family, friends, ego, courasity, and ambition. but not yourself, truth yourself who is reading this in the moment."
         },
         {
             "id": 2,
