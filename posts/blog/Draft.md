@@ -8,15 +8,15 @@ Tasks don't fall from sky! Tasks have context, they come from decsions we (or ou
 
 I don't like the idea of switching the window from my daily note to another window just to see if there is some free space in a near by date to be occupied by the coming task. problem was when I added a task I had two choice doing it today, or tomorrow. I didn't know what I am planning for three days from now, not without looking at this huge digital calendar screen. 
 
-![[/resc/assets/post_img/20250916192756.png]]
+![calendar](/resc/assets/img/20250916192756.png)
 *picture taken from: https://obsidian-community.github.io/obsidian-full-calendar/*
 
 
 to solve my task schaduling problem in obsidian without having a huge screen like any existing calendar, I came up with a simple yet effective way to see my schaduled list after tomorrow. I called it the bar, you can call it whatever you like as long as you actually use it. it's a bar (such a surprise) that have been divided to seven part by default, each part represent a day except for first one which represent today and tasks for ealier days, tasks that are overdue. depending on how many tasks you have allocated for a certain date the color of each part (day/date) change. the Bar has three levels/stacks, the first levels (the top bar) shows time allocation based on numerical emojis 1️⃣, 2️⃣, 3️⃣, ..., second shows mental and cognitive energy by looking for circle emoji based on their color 🟢, 🟡, 🟠, 🔴 and last stack is for showing days that have urgent task based on their priority 🔼 ⏫.
 
 
-![[/resc/assets/post_img/20250916204607.png]]
-*demo*
+![bar](/resc/assets/img/20250916204607.png)
+*demo bar*
 
 
 by no mean this script is completed, and scientificly and research based proven. it's just a toy I use to pick a date for my next task in a glance.
