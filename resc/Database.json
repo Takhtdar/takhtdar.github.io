@@ -2,7 +2,7 @@
     "blog": [
         {
             "id": 1,
-            "version" : "1.2",
+            "version" : "1.3",
             "filename": "/posts/blog/Draft.md",
             "title": "Task, Scheduling, and Bar",
             "summary": "we all have things to do. reading this blog for start is a thing that you decided to do. unlike many other tasks you have to do, paying attention to the following message isn't in your schedule. but if you want to plan for reading this later, there are at least two questions you needed to answer. (a) on what date do you want to schedule this task for, (b) how do you know that date isn't fully occoupied with a bunch of other tasks?"

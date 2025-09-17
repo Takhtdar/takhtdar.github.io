@@ -4,7 +4,7 @@ we all have things to do. reading this blog for start is a thing that you decide
 
 In past few weeks that I have been practicing scheduling my tasks in obsidian, I came across the second problem. **how I know a day in coming week has free space for a task to be pushed in**. there is a great list of plugins out there developed by greater community of Obsidian who deserve a shoutout. I wanted something in my dashboard. and then in every daily note I make. something fit.
 
-![daily note](/resc/assets/img/20250916191747.png)
+![daily note](/resc/assets/img/20250916191747.jpg)
 *bar showing allocated hours*
 
 Tasks don't fall from sky! Tasks have context, they come from decisions we (or our surrendering/environment) make every day, life we choice to experience, people who we talk and  books that we decide to read. if you don't plant a tree today, you don't have a task of watering it some day in future. I write my tasks in my daily notes along with a few paragraph, how I come across this task? what chain of decision have been followed to meet this task? I write the paragraph not only for my future self but also for AI, so one day (let's say a year and 26 weeks) along with motivation I get after reading the task, AI might be able to bring that task and tell me it can help me with. or do it by itself! if task is explained well by surrendering notes why there be a problem with being ambition to actually add as many task as you dream of?
