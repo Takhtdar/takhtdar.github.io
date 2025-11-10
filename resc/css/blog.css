@@ -59,7 +59,7 @@
 
 #Blog aside #tableOfContent {
     border-radius: 10px;
-    height: calc(100vh - 200px);
+    height: calc(100vh - 125px);
     margin-bottom: 15px;
     overflow: auto;
 }
@@ -79,7 +79,7 @@
 
 #Blog #summaryPostHolder{
     overflow: auto;
-    height: calc(100vh - 120px);
+    height: calc(100vh - 50px);
     margin: auto 0;
     margin: 0 15px;
     flex-direction: column;
