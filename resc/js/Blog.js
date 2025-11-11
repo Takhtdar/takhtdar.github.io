@@ -28,7 +28,7 @@ export async function initBlog() {
     });
 
     // Blog Title on CLick, show main Blog window!
-    document.querySelector("#Blog ul li ").addEventListener("click", function(){
+    document.querySelector("#Blog aside span ").addEventListener("click", function(){
         showBlog();
         if(areWeInsideABlogPostListeningForBackButton){
             window.removeEventListener("popstate", handleBackClick);
