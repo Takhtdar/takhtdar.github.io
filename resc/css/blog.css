@@ -90,7 +90,7 @@
 #Blog #summaryPostHolder .postSummary {
     flex-direction: column;
     padding: 15px;
-    margin: 0 20px 40px 20px;
+    margin: 0 15px 40px 0px;
     display: flex; /*switch display between flex and none
                     and none Dynamicly using js */
     border-radius: 10px;
