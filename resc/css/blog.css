@@ -1,5 +1,3 @@
-
-
 #Blog nav.fullScreen ul li img{
     margin-top: 0px;
 }
@@ -90,7 +88,7 @@
 #Blog #summaryPostHolder .postSummary {
     flex-direction: column;
     padding: 15px;
-    margin: 0 15px 40px 0px;
+    margin: 0 0px 40px 0px;
     display: flex; /*switch display between flex and none
                     and none Dynamicly using js */
     border-radius: 10px;
@@ -100,21 +98,18 @@
      border-color 0.3s ease,
      box-shadow 0.5s ease; /* Smooth transition */
     border: 3px solid transparent; /* Invisible edges initially */
-
+  border: 1px solid silver;
 }
 
 
 
 #Blog #summaryPostHolder .postSummary:hover{
-    /* border-color: rgba(241, 224, 129, 0.589); 
-    box-shadow: inset 0px 0px 3px 3px rgba(255,215,0,0.5); */
-    /* 
+    /*box-shadow: inset 0px 0px 3px 3px rgba(255,215,0,0.5); */
+     /*
     border-color: gold;
     box-shadow: inset 0px 0px 3px 3px gold; */
-
-    border-color: silver;
+    border-color: silver; 
     box-shadow: inset 0px 0px 5px 5px silver;
-
 }
 
 
