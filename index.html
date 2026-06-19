@@ -14,44 +14,6 @@
 
 <body>
   <section id="Header">
-    <nav class="fullScreen">
-      <ul>
-        <li>
-          <h1><a>Takhtdar</a></h1>
-        </li>
-        <!-- <li class="Header-Nav-Item sm-hide"><a onclick="rscrollToSection('Projects')">Projects</a></li> -->
-        <li class="Header-Nav-Item sm-hide">
-          <a onclick="rscrollToSection('Blog')">Blog</a>
-        </li>
-        <li class="Header-Nav-Item sm-hide">
-          <a onclick="rscrollToSection('Reviews')">Reviews</a>
-        </li>
-        <li class="Header-Nav-Item sm-hide" onclick="">
-          <a onclick="rscrollToSection('Contact')">Contact</a>
-        </li>
-        <!-- Shows only at Width < 1350px -->
-        <li onclick="HeaderMenu()" id="HeaderBurgur">
-          <a href="#"><img src="resc/assets/img/more.png" alt="" /></a>
-        </li>
-      </ul>
-    </nav>
-
-    <!-- showen when user click on more button at top! -->
-    <nav class="sidebar shadow">
-      <ul>
-        <!-- <li><a onclick="rscrollToSection('Projects')">Projects</a></li> -->
-        <li class="shadow">
-          <a onclick="rscrollToSection('Blog'); HeaderMenu()">Blog</a>
-        </li>
-        <li class="shadow">
-          <a onclick="rscrollToSection('Reviews');HeaderMenu()">Reviews</a>
-        </li>
-        <li class="shadow">
-          <a onclick="rscrollToSection('Contact');HeaderMenu()">Contact</a>
-        </li>
-      </ul>
-    </nav>
-
     <!-- Information about the author of website! -->
     <div id="introduction">
       <div>
@@ -89,21 +51,6 @@
 
   <!-- Create Blog -->
   <section id="Blog">
-    <!-- too much space...
-    <nav class="shadow fullScreen">
-      <ul>
-        <li>
-          <h3>Blog</h3>
-        </li>
-        <li>
-          <a onclick="rscrollToSection('Header')"><img src="resc/assets/img/arrowup.png" alt="" /></a>
-        </li>
-        <li>
-          <a onclick="rscrollToSection('Blog')"><img src="resc/assets/img/more.png" alt="" /></a>
-        </li>
-      </ul>
-    </nav>
-    -->
 
     <div class="container">
       <div id="asideOpenButton" class="shadow">↳</div>
@@ -114,8 +61,8 @@
           <span onclick="rscrollToSection('Blog');">Blog</span>
           <ul></ul>
         </div>
-        <button class="shadow" onclick="rscrollToSection('Reviews')">
-          See Content Reviews ↓
+        <button id="emailBox" class="shadow" data="0x536579656461686d61644074616b68746461722e6972">
+          Get Email in Clipboard
         </button>
       </aside>
       <div id="summaryPostHolder">
@@ -124,168 +71,7 @@
     </div>
   </section>
 
-  <!-- Create Reviews -->
-  <section id="Reviews">
-    <nav class="shadow fullScreen">
-      <ul>
-        <li>
-          <h3>Reviews</h3>
-        </li>
-        <li title="back to blog">
-          <a onclick="rscrollToSection('Blog')"><img src="resc/assets/img/arrowup.png" alt="" /></a>
-        </li>
-        <li><img src="resc/assets/img/more.png" alt="" /></li>
-      </ul>
-    </nav>
 
-    <div class="container">
-      <aside>
-        <div class="tableOfContent shadow" id="ReviewCat">
-          <ul>
-            <!--  reading this from DB -->
-            <li class="shadow" style="display: none"></li>
-          </ul>
-        </div>
-
-        <div class="tableOfContent shadow">
-          <ul id="ReviewToC">
-            <!--  reading this from DB -->
-            <li class="shadow"></li>
-          </ul>
-        </div>
-
-        <!-- <div id="vitrin" class="shadow">
-          <a href="https://motamem.org/azketab/">
-            <img src="resc/assets/img/azketab-cover.jpg" alt="azketab book cover" />
-          </a>
-        </div> -->
-        <button class="shadow" onclick="rscrollToSection('Contact')">
-          Contact Us ↓
-        </button>
-      </aside>
-
-      <div id="contentReview"></div>
-    </div>
-  </section>
-
-  <section id="Contact">
-    <div class="container">
-    
-   
-      <div class="shadow card sm-hide">
-        <span class="card-title">Interested in:</span>
-        <ul>
-          <li>Software Vulnerability and Security Research</li>
-          <li>Native and .NET Software Reverse Engineering</li>
-          <li>Desktop Device Driver Development (Windows & Linux)</li>
-        </ul>
-      </div>
-
-      <div class="card shadow sm-hide">
-        <span class="card-title">Experiences:</span>
-        <ul>
-          <li>Web2 Full-Stack Development</li>
-          <li>Sophisticated Malware Analysis</li>
-          <li>Windows Desktop Software Development</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="container"> 
-      <!--
-      <div id="inspiredBy" class="shadow card sm-hide">
-        <span class="card-title">Inspired by:</span>
-        <div class="ULWrapper">
-          <ul>
-            <li>Mario Puzo</li>
-            <li>Isaac Newton</li>
-            <li>Abraham Lincoln</li>
-            <li>Al-Ghazali</li>
-            <li>Aaron Swartz</li>
-            <li>Adib Amini Qeshmi</li>
-          </ul>
-        <ul>
-          <li>Mohammadreza Shabanali</li>
-          <li></li>
-          <li>George Hotz</li>
-          <li></li>
-        </ul>
-      -->
-        <!-- <ul>
-          <li>Mario Puzo</li>
-          <li>Isaac Newton</li>
-          <li>Lincoln Abraham</li>
-          <li>Mohammadreza Shabanali</li>
-          <li>Adib Amini Qeshmi</li>
-        </ul> -->
-
-        <!--
-        </div>
-      </div>
-
-      <div id="credits" class="shadow card">
-        <span class="card-title">Credits:</span>
-        <div class="ULWrapper">
-          <ul>
-            <li>
-              <img src="resc/assets/img/python.png" alt="Python Programming Langauge" />taken from
-              <a href="https://www.python.org/community/logos/">here</a>
-            </li>
-            <li>
-              <img src="resc/assets/img/computer.png" alt="Microsoft Windwos Internals" />taken from <a
-                href="#">here</a>
-            </li>
-            <li>
-              <img src="resc/assets/img/cpp.png" alt="CPP Programming Langauge" />taken from <a href="#">here</a>
-            </li>
-            <li>
-              <img src="resc/assets/img/C.png" alt="C Programming Langauge" />taken from <a href="#">here</a>
-            </li>
-            <li>
-              <img src="resc/assets/img/assembly.png" alt="Assembly x86_64 Langauge" />taken from <a href="#">here</a>
-            </li>
-          </ul>
-
-          <ul>
-            <li>
-              <img src="resc/assets/img/python.png" alt="Python Programming Langauge" />taken from <a href="#">here</a>
-            </li>
-            <li>
-              <img src="resc/assets/img/computer.png" alt="Microsoft Windwos Internals" />taken from <a href="#">
-                here</a>
-            </li>
-            <li>
-              <img src="resc/assets/img/cpp.png" alt="CPP Programming Langauge" />taken from <a href="#"> here</a>
-            </li>
-            <li>
-              <img src="resc/assets/img/C.png" alt="C Programming Langauge" />
-              taken from <a href="#"> here</a>
-            </li>
-            <li>
-              <img src="resc/assets/img/assembly.png" alt="Assembly x86_64 Langauge" />
-              taken from <a href="#"> here</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-      -->
-      <div id="contactInformation">
-        <div class="shadow card" id="emailBox">
-          <span class="card-title" style="align-self: center">Email - in Hexadecimal:</span>
-          <button class="shadow" data="0x536579656461686d61644074616b68746461722e6972">
-            Get Email in Clipboard
-          </button>
-          <span><a href="#">Download Public PGP Key!</a></span>
-        </div>
-      </div>
-    </div>
-
-    <footer class="shadow">
-      <span id="fversion">Version: Demo</span>
-      <span id="copyright">Copyrighted Information</span>
-      <a onclick="rscrollToSection('Header')"><img src="resc/assets/img/arrowup.png" alt="" />Back to Top</a>
-    </footer>
-  </section>
 </body>
 
 </html>

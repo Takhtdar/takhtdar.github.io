@@ -19,7 +19,8 @@ async function main() {
 
 function listenToEvents() {
     // let mainSections = ["Header", "Blog", "Reviews"];
-    let mainSections = ["Header", "Contact"];
+    // let mainSections = ["Header", "Contact"];
+	let mainSections = ["Header"];
 
 
     function up(section) {
@@ -124,7 +125,7 @@ function switchhideHeaderSidebarMenu() {
 
 function copyMailtoClipboard(){
 
-    const emailBtn = document.querySelector("#emailBox > button:nth-child(2)");
+    const emailBtn = document.querySelector("#emailBox");
     const emailBtnContent = emailBtn.textContent;
     emailBtn.addEventListener("click", function(){
         navigator.clipboard.writeText(emailBtn.getAttribute("data"));
