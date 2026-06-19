@@ -3,6 +3,7 @@ import { Database } from './Database.js'
 
 
 export async function initReview() {
+	return 0;
     await initReviewNavbar();
 
     // set default selected category,  

@@ -33,7 +33,7 @@ export async function initBlog() {
         if(areWeInsideABlogPostListeningForBackButton){
             window.removeEventListener("popstate", handleBackClick);
         }});
-    document.querySelector("#Blog > nav:nth-child(1) > ul:nth-child(1) > li:nth-child(3)").addEventListener("click", switchTOConMobile)
+  //  document.querySelector("#Blog > nav:nth-child(1) > ul:nth-child(1) > li:nth-child(3)").addEventListener("click", switchTOConMobile)
 
 }
 
