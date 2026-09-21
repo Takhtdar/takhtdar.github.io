@@ -29,21 +29,21 @@
 
 /* Primary heading: Name */
 #Header #introduction h1#name {
-    font-family: var(--font-mono);
+font-family: var(--font-heading);
     font-size: 3.5rem;
     font-weight: 700;
-    margin: 12px 0 8px 0;
-    letter-spacing: -1.5px;
+    margin: 6px 0 10px 0;
+    letter-spacing: -1px;
     color: var(--color-text-main);
-    line-height: 1.1;
+    line-height: 1.15;
 }
 
 /* Secondary heading: Subtitle */
 #Header #introduction #title {
-    font-family: var(--font-heading);
-    font-size: 1rem;
+font-family: var(--font-heading);
+    font-size: 1.1rem;
     font-weight: 600;
-    font-style: normal;
+    font-style: normal !important; /* Not italic */
     text-transform: uppercase;
     letter-spacing: 2px;
     color: var(--color-text-muted);
@@ -57,15 +57,35 @@
 }
 
 #Header #introduction button.nav-btn {
-    width: fit-content;
-    padding: 0.85rem 2rem;
+width: 65%;
+    max-width: 320px;
+    padding: 0.95rem 1.5rem;
     font-family: var(--font-mono);
-    font-size: 0.95rem;
+    font-size: 1.1rem;
+    font-weight: 500;
     border: 1px solid var(--color-border);
     border-radius: var(--radius-md);
     background: var(--color-bg);
     cursor: pointer;
+    margin-top: 24px;
+    transform: rotate(3deg);
+    transition: transform 0.3s ease, border-color 0.2s ease, box-shadow 0.2s ease;
 }
+
+#Header #introduction button.nav-btn:hover {
+    transform: rotate(0deg);
+    border-color: var(--color-border-hover);
+    box-shadow: var(--shadow-subtle);
+}
+
+@media (max-width: 1100px) {
+    #Header #introduction button.nav-btn {
+        margin: 20px auto 0 auto;
+    }
+}
+
+
+
 
 #Header #introduction #HIcon {
     max-width: 320px;
