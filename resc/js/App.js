@@ -8,7 +8,7 @@ async function main() {
     await initRouting();
     initBlog();
     initReview();
-    listenToEvents();
+//    listenToEvents();
     window.HeaderMenu = HeaderMenu;
     copyMailtoClipboard()
 
