@@ -1,54 +1,22 @@
 {
     "blog": [
         {
-            "id": 1,
-            "version" : "1.5",
             "filename": "/posts/blog/Draft.md",
+            "id": 1,
+            "summary": "We all have tasks to do. reading this blog for start is a task that you decided to do. Unlike many other tasks you have to do, paying attention to the following message isn't in your schedule. But if you want to plan for reading this later, there are at least two questions you needed to answer. (a) on what date do you want to schedule this task for, (b) how do you know that date isn't fully occoupied with a bunch of other tasks?",
             "title": "Task, Scheduling, and Bar",
-            "summary": "We all have things to do. reading this blog for start is a thing that you decided to do. Unlike many other tasks you have to do, paying attention to the following message isn't in your schedule. But if you want to plan for reading this later, there are at least two questions you needed to answer. (a) on what date do you want to schedule this task for, (b) how do you know that date isn't fully occoupied with a bunch of other tasks?"
+            "version": "1.6"
         },
         {
-            "id": 2,
-            "version" : "1.0",
             "filename": "/posts/blog/favorite.md",
-            "title": "Hello World for second time 2",
-            "summary": "This is a short version of the long version of this blog post! Post 2"
+            "id": 2,
+            "summary": "This is a short version of the long version of this blog post! Post 2",
+            "title": "Hello World!",
+            "version": "1.1"
         }
     ],
     "reviews": {
-        "books": [
-            {
-                "id": 1,
-                "version" : "1.0",
-                "filename": "/posts/reviews/books/To kill a mockingbird.md",
-                "title": "To Kill a Mockingbird"
-            },
-            {
-                "id": 2,
-                "version" : "1.0",
-                "filename": "/posts/reviews/books/1984.md",
-                "title": "1984"
-            }
-        ],
-        "films": [
-            {
-                "id": 1,
-                "version" : "1.2",
-                "filename": "/posts/reviews/films/John Wick 1.md",
-                "title": "John Wick 1"
-            },
-            {
-                "id": 2,
-                "version" : "1.0",
-                "filename": "/posts/reviews/films/Green Mile.md",
-                "title": "Green Mile"
-            },
-            {
-                "id": 3,
-                "version" : "1.0",
-                "filename": "/posts/reviews/films/The Godfather 1.md",
-                "title": "The Godfather 1"
-            }
-        ]
+        "books": [],
+        "films": []
     }
 }
