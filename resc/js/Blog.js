@@ -38,6 +38,23 @@ export async function initBlog() {
 }
 
 export async function showBlogPost(PostID) {
+
+	document.getElementsByTagName("article")[0].innerHTML = html;
+    
+    // Add bottom navigation link
+    const backNav = document.createElement("div");
+    backNav.className = "post-bottom-nav";
+    backNav.innerHTML = `<button class="shadow back-to-toc-btn">&larr; Back to all posts</button>`;
+    backNav.querySelector("button").addEventListener("click", showBlog);
+    document.getElementsByTagName("article")[0].appendChild(backNav);
+
+	// Hide hero header so reading is full-page with zero nested scrollbars
+    document.getElementById("Header").classList.add("displaynone");
+    
+    // Scroll window to top
+    window.scrollTo({ top: 0, behavior: 'instant' });
+
+
     console.log("showing blog post!");
 
     document.getElementById("Blog").scrollIntoView();
@@ -145,6 +162,8 @@ function switchTOConMobile() {
 
 
 function showBlog() {
+document.getElementById("Header").classList.remove("displaynone");
+
     console.log("showing Blog main window!")
 
     let article = document.querySelector("#summaryPostHolder article");
