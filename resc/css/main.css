@@ -1,7 +1,5 @@
 @import url("/resc/css/header.css");
 @import url("/resc/css/blog.css");
-@import url("/resc/css/reviews.css");
-@import url("/resc/css/contact.css");
 
 :root {
     --font-base: 'Roboto', -apple-system, BlinkMacSystemFont, sans-serif;
