@@ -1,3 +1,5 @@
+/* resc/css/blog.css */
+
 #Blog {
     min-height: 100dvh;
     display: flex;
@@ -7,51 +9,49 @@
 #Blog div.container {
     display: flex;
     flex-direction: row;
-    margin-top: 20px;
-width: 100%;
-
+    align-items: flex-start; /* CRUCIAL: Allows the sticky sidebar to work */
+    width: 100%;
+    max-width: 1200px; /* Keeps reading width clean and centered */
+    margin: 40px auto;
+    gap: 40px; /* Space between sidebar and content */
+    padding: 0 20px;
 }
 
-#Blog #asideOpenButton {
-    width: 42px;
-    height: 240px;
-    border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
-    background-color: var(--color-surface);
-    border: 1px solid var(--color-border);
-    border-left: none;
-    align-self: center;
-    cursor: pointer;
-    align-items: center;
-    justify-content: center;
-    display: none;
-    font-size: 1.5rem;
-}
+/* -------------------------------- */
+/* Sidebar / Table of Contents      */
+/* -------------------------------- */
 
 #Blog aside {
-    flex-direction: column;
-    width: 340px;
+    position: sticky;
+    top: 40px; /* Sticks 40px from the top of the screen while reading */
+    height: calc(100vh - 80px); /* Tall, standing sidebar */
+    width: 320px;
+    flex-shrink: 0; /* Prevents sidebar from squishing */
     display: flex;
-    margin: 0 20px;
+    flex-direction: column;
+    gap: 16px;
 }
 
 #Blog aside #tableOfContent {
     border-radius: var(--radius-md);
     border: 1px solid var(--color-border);
-    height: calc(100% - 70px);
-    overflow-y: auto;
-    padding: 16px;
+    flex: 1;
+    overflow-y: auto; /* Only the list of links scrolls if you have 100 posts */
+    padding: 20px;
+    background-color: var(--color-surface);
 }
 
+/* "Blog" Title in Sidebar */
 #Blog aside #tableOfContent span {
-display: block;
+    display: block;
     text-align: center;
-    font-family: var(--font-heading);
+    font-family: var(--font-base); /* Clean, standard Roboto font */
     font-weight: 700;
-    font-size: 1.25rem;
-    letter-spacing: 0.5px;
-    margin-bottom: 16px;
+    font-size: 1.5rem;
+    letter-spacing: 0;
+    margin-bottom: 24px;
     cursor: pointer;
-
+    color: var(--color-text-main);
 }
 
 #Blog aside #tableOfContent ul {
@@ -61,8 +61,8 @@ display: block;
 }
 
 #Blog aside #tableOfContent ul li {
-    font-size: 0.95rem;
-    padding: 8px 12px;
+    font-size: 1rem;
+    padding: 10px 14px;
     margin-bottom: 6px;
     border-radius: var(--radius-sm);
     cursor: pointer;
@@ -71,19 +71,27 @@ display: block;
 }
 
 #Blog aside #tableOfContent ul li:hover {
-    background-color: var(--color-surface);
+    background-color: var(--color-bg);
     color: var(--color-text-main);
+    box-shadow: var(--shadow-subtle);
 }
 
-/* Post Listings */
+#Blog aside #emailBox {
+    margin-top: auto;
+}
+
+/* -------------------------------- */
+/* Main Content Area (Posts)        */
+/* -------------------------------- */
+
 #Blog #summaryPostHolder {
     flex: 1;
-    margin: 0 20px;
     display: flex;
     flex-direction: column;
-    padding-bottom: 80px;
+    /* No fixed height, let it grow naturally! */
 }
 
+/* Post Summaries (The List) */
 #Blog #summaryPostHolder .postSummary {
     padding: 24px;
     margin-bottom: 24px;
@@ -91,52 +99,56 @@ display: block;
     flex-direction: column;
     border-radius: var(--radius-md);
     border: 1px solid var(--color-border);
+    background-color: var(--color-surface);
     cursor: pointer;
-    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
 }
 
 #Blog #summaryPostHolder .postSummary:hover {
     border-color: var(--color-border-hover);
     box-shadow: var(--shadow-subtle);
+    transform: translateY(-2px);
 }
 
+/* Post Summary Titles */
 #Blog #summaryPostHolder .postSummary h4 {
-font-family: var(--font-heading);
-    font-size: 1.4rem;
+    font-family: var(--font-base); /* Clean, standard Roboto font */
+    font-size: 1.6rem;
     font-weight: 700;
-    letter-spacing: -0.3px;
-    margin: 0 0 10px 0;
+    margin: 0 0 12px 0;
     color: var(--color-text-main);
 }
 
 #Blog #summaryPostHolder .postSummary p {
-    font-size: 1rem;
+    font-size: 1.05rem;
     line-height: 1.6;
     color: var(--color-text-muted);
     margin: 0;
 }
 
-/* Single Article Content */
+/* -------------------------------- */
+/* Single Article (Reading View)    */
+/* -------------------------------- */
+
 #Blog article {
     display: flex;
     flex-direction: column;
-    margin: 0 auto;
-    max-width: 760px;
     width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
     font-size: 1.15rem;
     line-height: 1.8;
-    padding-bottom: 120px;
+    padding-bottom: 60px; /* Reduced bottom padding on desktop */
 }
 
 #Blog article h1 { font-size: 2.4rem; font-weight: 700; margin: 0 0 20px 0; }
-#Blog article h2 { font-size: 1.8rem; margin: 28px 0 12px 0; }
+#Blog article h2 { font-size: 1.8rem; margin: 28px 0 12px 0; border-bottom: 1px solid var(--color-border); padding-bottom: 8px;}
 #Blog article h3 { font-size: 1.4rem; margin: 24px 0 8px 0; }
 
 #Blog article p {
-    margin: 0 0 1.25rem 0;
+    margin: 0 0 1.5rem 0;
     text-align: left;
 }
-
 
 /* Code block container */
 #Blog article pre {
@@ -161,7 +173,7 @@ font-family: var(--font-heading);
     color: var(--color-text-main);
 }
 
-/* Inline code (like `let x = 1`) */
+/* Inline code */
 #Blog article :not(pre) > code {
     font-family: var(--font-mono);
     font-size: 0.9em;
@@ -172,59 +184,76 @@ font-family: var(--font-heading);
     color: var(--color-text-main);
 }
 
-
-
 #Blog article a {
     color: var(--color-link);
+    text-decoration: underline;
+    text-underline-offset: 4px;
 }
 
 #Blog article img {
     max-width: 100%;
     border-radius: var(--radius-md);
     margin: 20px auto;
+    box-shadow: var(--shadow-subtle);
 }
 
-/* Mobile Rules */
-@media (max-width: 1000px) {
-    #Blog div.container {
-        margin-top: 0;
-        height: 100dvh;
-    }
-
-    #Blog aside {
-        display: none;
-    }
-
-    #Blog #summaryPostHolder {
-        margin: 0;
-        padding: 16px 16px 100px 16px;
-    }
-
-    #Blog article {
-        margin: 0 16px;
-        padding-bottom: 140px;
-    }
-}
-
-
+/* -------------------------------- */
+/* Mobile Back Button               */
+/* -------------------------------- */
 
 .post-bottom-nav {
     margin-top: 40px;
-    padding-top: 20px;
+    padding-top: 30px;
     border-top: 1px solid var(--color-border);
-    display: flex;
+    display: none; /* Hidden on desktop, shown on mobile */
     justify-content: center;
 }
 
 .post-bottom-nav .back-to-toc-btn {
-    width: fit-content;
-    padding: 10px 24px;
-    font-family: var(--font-heading);
+    width: 100%;
+    max-width: 300px;
+    padding: 14px 24px;
+    font-family: var(--font-base);
+    font-size: 1.1rem;
     font-weight: 600;
+    background-color: var(--color-text-main);
+    color: var(--color-bg);
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    border: none;
 }
 
-/* Hide the old aside toggle button everywhere */
+/* Completely kill the old asideOpenButton */
 #asideOpenButton {
     display: none !important;
 }
 
+/* -------------------------------- */
+/* Responsive Mobile Rules          */
+/* -------------------------------- */
+
+@media (max-width: 1000px) {
+    #Blog div.container {
+        flex-direction: column;
+        margin-top: 20px;
+        padding: 0 16px;
+        gap: 20px;
+    }
+
+    #Blog aside {
+        display: none; /* Hide sidebar entirely on mobile */
+    }
+
+    #Blog #summaryPostHolder {
+        margin: 0;
+        width: 100%;
+    }
+
+    #Blog article {
+        padding-bottom: 80px;
+    }
+
+    .post-bottom-nav {
+        display: flex; /* Show back button on mobile */
+    }
+}

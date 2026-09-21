@@ -1,13 +1,12 @@
+// resc/js/Blog.js
 import { Database } from './Database.js'
 
 let areWeInsideABlogPostListeningForBackButton = false; 
-
 
 export async function initBlog() {
     console.log("Initializing Blog!");
 
     // show post summaries and set the blog table of content
-    // in case user enter from /Blog/Read/id hide post summaries after creation!
     let path = ((new URL(window.location.href)).pathname)
     const database = await Database.getInstance();
     database.blog.forEach(({ title, id, summary }) => {
@@ -20,66 +19,25 @@ export async function initBlog() {
         }
     });
 
-    // listen to aside that only be shown when user start to read a blog post, and when clicked
-    // show the side bar, for table of content
-    document.getElementById("asideOpenButton").addEventListener("click", function(){
-        document.querySelector("section#Blog .container aside").style.display = "flex";
-        document.querySelector("section#Blog .container #asideOpenButton").style.display = "none";
-    });
-
     // Blog Title on CLick, show main Blog window!
-    document.querySelector("#Blog aside span ").addEventListener("click", function(){
+    document.querySelector("#Blog aside span").addEventListener("click", function(){
         showBlog();
         if(areWeInsideABlogPostListeningForBackButton){
             window.removeEventListener("popstate", handleBackClick);
-        }});
-  //  document.querySelector("#Blog > nav:nth-child(1) > ul:nth-child(1) > li:nth-child(3)").addEventListener("click", switchTOConMobile)
-
+        }
+    });
 }
 
 export async function showBlogPost(PostID) {
-
-	document.getElementsByTagName("article")[0].innerHTML = html;
-    
-    // Add bottom navigation link
-    const backNav = document.createElement("div");
-    backNav.className = "post-bottom-nav";
-    backNav.innerHTML = `<button class="shadow back-to-toc-btn">&larr; Back to all posts</button>`;
-    backNav.querySelector("button").addEventListener("click", showBlog);
-    document.getElementsByTagName("article")[0].appendChild(backNav);
-
-	// Hide hero header so reading is full-page with zero nested scrollbars
-    document.getElementById("Header").classList.add("displaynone");
-    
-    // Scroll window to top
-    window.scrollTo({ top: 0, behavior: 'instant' });
-
-
     console.log("showing blog post!");
 
-    document.getElementById("Blog").scrollIntoView();
     if(PostID === "undefined"){return}
     window.addEventListener("popstate", handleBackClick);
     areWeInsideABlogPostListeningForBackButton = true;
 
-    /* 
-    first function in case user enters from /Blog/Read/id
-    Get Post ID as input then convert it into file name, using map
-    in database! then fetch content of file and show it using
-    showdonw Library! a markdown parser! 
-    
-
-    called from clicked on post Summary, button, or URL trigger
-    for now we use Showdown js library but might later write our own parser
-    
-    */
-    
-
-
     let db = await Database.getInstance();
     let filename = db.blog.find(post => post.id == PostID).filename;
     let version = db.blog.find(post => post.id == PostID).version;
-
 
     let summaryPostHolder = document.querySelector("#summaryPostHolder");
     summaryPostHolder.classList.add("displayflex");
@@ -93,20 +51,34 @@ export async function showBlogPost(PostID) {
         html = converter.makeHtml(text);
 
     document.getElementsByTagName("article")[0].innerHTML = html;
-    document.querySelector("section#Blog .container #asideOpenButton").style.display = "flex";
 
+    // Add bottom navigation link for Mobile
+    const backNav = document.createElement("div");
+    backNav.className = "post-bottom-nav";
+    backNav.innerHTML = `<button class="shadow back-to-toc-btn">&larr; Back to all posts</button>`;
+    backNav.querySelector("button").addEventListener("click", () => {
+        showBlog();
+        document.getElementById("Blog").scrollIntoView({ behavior: 'smooth' });
+    });
+    document.getElementsByTagName("article")[0].appendChild(backNav);
+
+    // Hide Hero Header for full reading immersion
+    document.getElementById("Header").classList.add("displaynone");
+
+    // Hide Post Summaries so only the Article is visible
     document.querySelectorAll("div.postSummary").forEach(summary => {
         summary.style.display = "none";
     });
 
-
-
-    document.querySelector("section#Blog .container aside").style.display = "none";
-
+    // Display the Article
     let article = document.getElementsByTagName("article")[0];
     article.classList.remove("displaynone");
     article.classList.add("displayflex");
 
+    // Scroll gracefully to the top of the blog section
+    setTimeout(() => {
+        document.getElementById("Blog").scrollIntoView({ behavior: 'instant' });
+    }, 10);
 }
 
 function createPostSummaryTemplate(title, id, summary) {
@@ -124,7 +96,6 @@ function createPostSummaryTemplate(title, id, summary) {
         let postId = postSummary.getAttribute("data-id");
         showBlogPost(postId);
     });
-
 }
 
 function setAsideTitles(title, id) {
@@ -137,59 +108,33 @@ function setAsideTitles(title, id) {
         let postId = item.getAttribute("data-id");
         showBlogPost(postId); 
     });
-
-
 }
-
-
-/* ReFactor this! */
-function switchTOConMobile() {
-    let aside = document.querySelector("#Blog aside").style;
-    if (aside.display != "flex") {
-        aside.display = "flex";
-        document.getElementById("summaryPostHolder").classList.add("displaynone");
-        document.getElementsByTagName("article")[0].classList.add("displaynone");
-        document.getElementById("summaryPostHolder").classList.remove("displayflex");
-        document.getElementsByTagName("article")[0].classList.remove("displayflex");
-    } else {
-        aside.display = "none";
-        document.getElementById("summaryPostHolder").classList.add("displayflex");
-        document.getElementsByTagName("article")[0].classList.add("displayflex");
-        document.getElementById("summaryPostHolder").classList.remove("displaynone");
-        document.getElementsByTagName("article")[0].classList.remove("displaynone");
-    }
-}
-
 
 function showBlog() {
-document.getElementById("Header").classList.remove("displaynone");
+    console.log("showing Blog main window!");
+    
+    // Restore Hero Header
+    document.getElementById("Header").classList.remove("displaynone");
 
-    console.log("showing Blog main window!")
-
+    // Hide the article
     let article = document.querySelector("#summaryPostHolder article");
     article.classList.remove("displayflex");
     article.classList.add("displaynone");
 
-    let asideOpenButton = document.querySelector("#asideOpenButton");
-    asideOpenButton.style.display = "none";
-
+    // Show the summaries
     document.querySelectorAll(".postSummary").forEach(element => {
         element.style.display = "flex";
     });
 
-    document.querySelector("aside").style.display = "flex";
-
     window.history.pushState('', 'unUsed', '/Blog');
-    document.getElementById("Blog").scrollIntoView();
-
+    
+    setTimeout(() => {
+        document.getElementById("Blog").scrollIntoView({ behavior: 'smooth' });
+    }, 10);
 }
-
-
-
-
 
 function handleBackClick() {
     showBlog(); 
-    window.removeEventListener("popstate", handleBackClick); // Remove the listener
+    window.removeEventListener("popstate", handleBackClick); 
     areWeInsideABlogPostListeningForBackButton = false;
 }
