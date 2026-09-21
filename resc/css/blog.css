@@ -61,13 +61,16 @@
     border-radius: var(--radius-sm);
     cursor: pointer;
     color: var(--color-text-muted);
-    transition: font-weight 0.2s ease, color 0.2s ease;
+    /* Removed the font-weight transition */
+    transition: color 0.2s ease, transform 0.2s ease; 
 }
 
 #Blog aside #tableOfContent ul li:hover {
-    font-weight: 700; /* Bold on hover instead of background color */
     color: var(--color-text-main);
+    transform: translateX(4px); /* A gentle, chill nudge instead of aggressive bolding */
 }
+
+
 
 #Blog aside #emailBox {
     margin-top: 15px;
@@ -105,10 +108,12 @@
 
 #Blog #summaryPostHolder .postSummary h4 {
     font-family: var(--font-base); 
-    font-size: 1.6rem;
-    font-weight: 700;
-    margin: 0 0 12px 0;
-    color: var(--color-text-main);
+    font-size: 1.3rem; /* Scaled down from 1.6rem */
+    font-weight: 500;  /* Medium weight, much less aggressive than 700 */
+    margin: 0 0 8px 0;
+    color: #1a1a1a;    /* Softer charcoal instead of harsh black */
+
+
 }
 
 #Blog #summaryPostHolder .postSummary p {
