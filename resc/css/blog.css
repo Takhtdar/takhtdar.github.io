@@ -265,14 +265,13 @@ commented because the button at blog.js also has been commentend out!
     #Blog aside {
         display: none;
         width: 100%;
+	margin-right: 5px;
     }
 
-    #Blog aside{
-        margin-right: 5px;
-    }
 
     #Blog #summaryPostHolder{
-        margin: 0px 0px 0 0;
+        margin: 0px;
+	padding-bottom: 80px;
 
     }
 
@@ -283,6 +282,8 @@ commented because the button at blog.js also has been commentend out!
 
     #Blog article {
         margin: 0 25px;
+	padding-bottom: 120px;
+	margin-bottom: 0;
     }
 }
 
