@@ -29,21 +29,23 @@
 
 /* Primary heading: Name */
 #Header #introduction h1#name {
-font-family: var(--font-heading);
+font-family: 'Raleway', sans-serif;
     font-size: 3.5rem;
-    font-weight: 700;
+    font-weight: 800;
+    font-style: normal;
     margin: 6px 0 10px 0;
     letter-spacing: -1px;
     color: var(--color-text-main);
     line-height: 1.15;
+
 }
 
 /* Secondary heading: Subtitle */
 #Header #introduction #title {
-font-family: var(--font-heading);
-    font-size: 1.1rem;
+font-family: 'Raleway', sans-serif;
+    font-size: 1rem;
     font-weight: 600;
-    font-style: normal !important; /* Not italic */
+    font-style: normal;
     text-transform: uppercase;
     letter-spacing: 2px;
     color: var(--color-text-muted);
