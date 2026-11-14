@@ -208,14 +208,21 @@
     max-width: 300px;
     padding: 14px 24px;
     font-family: var(--font-base);
-    font-size: 1.1rem;
+    font-size: 0.9rem;
     font-weight: 600;
-    background-color: var(--color-text-main);
-    color: var(--color-bg);
+    background-color: var(--color-bg);
+    color: var(--color-text-main);
+    border: 1px solid #d1d5db; /* Adjust or replace with a border variable if you have one */
     border-radius: var(--radius-md);
     cursor: pointer;
-    border: none;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
 }
+
+.post-bottom-nav .back-to-toc-btn:hover {
+    background-color: #f3f4f6;
+    border-color: var(--color-text-main);
+}
+
 
 #asideOpenButton {
     display: none !important;
